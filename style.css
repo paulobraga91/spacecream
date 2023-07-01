@@ -1,0 +1,272 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+      font-size: 62.5%;
+    --bg-color:#EFF1FF;
+    --color-bg-heading :#FEEAFA;
+    --color-bg-logo:#8E9AAF;
+    --fc-logo:#FFFFFF;/*color from h1 on header*/
+    --fc-color-text: #23053A;
+    --fc-color-span:#4A4E69;
+    --fc-header:#FFFFFF;
+    --ff-heading:'Staatliches',sans-serif;
+    --ff-texting: 'Palanquin','sans-serif';
+    --fz-h2M:1.2rem;
+}
+
+body{
+    background-color:var(--bg-color);
+}
+
+header{
+    background-color: var(--color-bg-logo);
+    font-family: var(--ff-heading);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: grid;
+    place-items: center;
+
+    
+}
+
+header h1{
+    background-color: #CBC0D3;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    font-weight: 400;
+    color:var(--fc-header);
+
+    text-align: center;
+    margin-bottom: 2.9rem;
+    padding: 0.5rem;
+    width: 100%;
+
+    letter-spacing: 0.4rem;
+    line-height: 3.4rem;
+    font-size: 4rem; 
+}
+
+header img{
+    margin: 3rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 1.8rem 3.2rem 6rem;
+}
+                                
+.container{
+    margin: 0 auto;
+  }
+
+#texto-mobile{
+    font-family: var(--ff-texting);
+    color: var(--fc-color-text);
+    font-size: 1.4rem;
+    line-height: 2.0rem;
+    
+    margin: 0 auto 3.4rem auto;
+    text-align: center;
+  }
+
+        /**até aqui tudo 100%**/
+
+.cards{
+    display: grid;
+    align-items: center;
+    gap: 3.2rem; 
+  }
+
+.cards .card{
+    position: relative;
+}
+
+ .cards .card span{
+    position: absolute;
+    z-index: 1;
+    right: 1.0rem;
+    top: 1.0rem;
+    font-family: Staatliches;
+    width: 11.2rem;
+    text-align: center;
+    background-color: var(--color-bg-heading);
+    color: var(--fc-color-span);
+    
+  
+    border-radius: 20px;
+    border: solid 1px black;
+    
+    font-size: 2rem;
+    padding: 1.0rem;
+    margin: 3rem;
+   
+    animation-name: TopDown;
+    animation-duration: 500ms;
+       
+}
+.card img{
+    width: 100%;
+    border-radius: 20px;
+    
+    transition: transform 700ms;
+    animation: DownTop 1s forwards;
+}
+
+#cards img:hover{
+    filter: blur(2px) saturate(50%);
+}
+
+
+
+
+
+footer{
+    display: none;
+}
+
+#texto-desktop{
+    font-family: var(--ff-texting);
+    color: var(--fc-color-text);
+    font-size: 1.4rem;
+    line-height: 2.0rem;
+    
+    margin: 0 auto 3.4rem auto;
+    text-align: center;
+    padding: 1rem;
+
+    display: none;
+}
+
+
+
+@keyframes TopDown{
+
+0%{
+opacity: 0;
+transform :translateY(-15px);
+
+}
+
+
+
+100%{
+    opacity: 1;
+    transform:translateY(0);
+
+}
+
+}
+
+@keyframes DownTop {
+  
+    0%{
+        opacity: 0;
+        transform:translateY(15px);
+    }
+
+    100%{
+        opacity: 1;
+        transform:translateY(0);
+    }
+    
+}
+
+
+
+@media (min-width: 700px){
+   
+   
+    .cards {
+        display: grid;
+        grid-template-columns: 1FR 1FR;
+       
+        grid-template-areas: 
+        "B ."
+        "B ."
+        "A C"
+        ;
+        gap: 3.2rem;
+        }
+    
+    .card div:nth-child(1){
+        grid-area: A;
+    }
+
+    .card div:nth-child(2){
+        grid-area: B;
+    }
+    .card div:nth-child(3){
+        display: C;
+    }
+    .card div:nth-child(4){
+        grid-area: D;
+    }
+    .card div:nth-child(5){
+       display: none;
+    }
+
+    .card div:nth-child(6){
+        display: none;
+    }
+   
+ 
+     #texto-mobile{
+        display: none;
+     }
+
+     #texto-desktop{
+        display: inline;
+     }
+
+     .container{
+        display: flex;
+        flex-direction: unset;
+     }
+
+     header{
+        width: 37.7rem;
+        height: 100vh;
+     }
+}
+
+@media (min-width: 1200px){
+
+.cards{
+
+    grid-template-areas: 
+    "A B C"
+    "D B E" 
+    "D F E";
+}
+
+.cards .card:nth-child(1){
+    grid-area: A;
+}
+
+.cards .card:nth-child(2){
+    grid-area: B;
+}
+.cards .card:nth-child(3){
+    grid-area: C;
+}
+.cards .card:nth-child(4){
+    grid-area: D;
+}
+.cards .card:nth-child(5){
+    grid-area: E;
+}
+.cards .card:nth-child(6){
+    grid-area: F;
+}
+
+footer{
+    display: inline;
+    margin: 10rem auto;
+    font-size: 1.4rem;
+}
+
+
+
+}
