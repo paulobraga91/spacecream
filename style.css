@@ -115,7 +115,7 @@ main{
     animation: DownTop 1s forwards;
 }
 
-#cards img:hover{
+.cards img:hover{
     filter: blur(2px) saturate(50%);
 }
 
